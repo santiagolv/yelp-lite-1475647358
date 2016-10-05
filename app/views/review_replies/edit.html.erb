@@ -42,7 +42,7 @@
           Restaurant ownership
         </label>
 
-        <input type="text" id="restaurant_ownership_id" name="restaurant_ownership_id" placeholder="Restaurant ownership" class="form-control" value="<%= @review_reply.restaurant_ownership_id %>">
+        <%= select_tag(:restaurant_ownership_id, options_from_collection_for_select(RestaurantOwnership.all, :id, :user_id, @review_reply.restaurant_ownership_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">
